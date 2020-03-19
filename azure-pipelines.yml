@@ -13,18 +13,14 @@ steps:
 - task: UseNode@1
   inputs:
     checkLatest: true
-  displayName: 'Install Latest Node'
+  displayName: 'Install latest Node'
 
 - script: |
     npm install
     npm build
-  displayName: 'NPM Install and Build'
+  displayName: 'npm install and build'
 
 
-- task: AzurePowerShell@5
-  inputs:
-    ScriptType: 'FilePath'
-    azurePowerShellVersion: 'LatestVersion'
 - task: AzureFileCopy@4
   inputs:
     SourcePath: 'build'
