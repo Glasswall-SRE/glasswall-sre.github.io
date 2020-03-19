@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseNode@1
+  inputs:
+    checkLatest: true
+  displayName: 'Install Latest Node'
+
+- script: |
+    npm install
+    npm build
+  displayName: 'NPM Install and Build'
+
+
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: 'build'
+    azureSubscription: 'AzureDevopsServicePrincipal'
+    Destination: 'AzureBlob'
+    storage: 'glasswallsresite'
+    ContainerName: '$web'
+
