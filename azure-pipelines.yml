@@ -18,6 +18,7 @@ steps:
 - script: |
     npm install
     npm build
+    dir
   displayName: 'npm install and build'
 
 
