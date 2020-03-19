@@ -21,6 +21,10 @@ steps:
   displayName: 'NPM Install and Build'
 
 
+- task: AzurePowerShell@5
+  inputs:
+    ScriptType: 'FilePath'
+    azurePowerShellVersion: 'LatestVersion'
 - task: AzureFileCopy@4
   inputs:
     SourcePath: 'build'
@@ -28,4 +32,3 @@ steps:
     Destination: 'AzureBlob'
     storage: 'glasswallsresite'
     ContainerName: '$web'
-
