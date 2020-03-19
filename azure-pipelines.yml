@@ -30,7 +30,7 @@ steps:
 
 - task: AzureFileCopy@4
   inputs:
-    SourcePath: 'build'
+    SourcePath: 'build/*'
     azureSubscription: 'AzureDevopsServicePrincipal'
     Destination: 'AzureBlob'
     storage: 'glasswallsresite'
