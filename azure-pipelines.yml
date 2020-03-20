@@ -4,36 +4,24 @@ trigger:
 
 pool:
   vmImage: 'windows-2019'
+steps:
+    - task: UseNode@1
+      inputs:
+        checkLatest: true
+      displayName: 'install latest node'
 
-stages:
-  - stage: BuildDocumentSite
-    displayName: Build Document Site
-    jobs:
-      - job: InstallNodeAndBuild 
-        displayName: Install Node and Build
-        steps:
-          - task: UseNode@1
-            inputs:
-              checkLatest: true
-            displayName: 'Install latest Node'
+    - script: |
+        npm install
+      displayName: 'npm install'
 
-          - script: |
-              npm install
-            displayName: 'npm install'
-
-          - script: |
-              npm run build
-            displayName: 'npm build'
-  - stage: DeployDocumentSite
-    displayName: Deploy Document Site
-    jobs:
-      - job: DeploySite 
-        displayName: 'Deploy Site'
-        steps:
-          - task: AzureFileCopy@4
-            inputs:
-              SourcePath: 'build/*'
-              azureSubscription: 'AzureDevopsServicePrincipal'
-              Destination: 'AzureBlob'
-              storage: 'glasswallsresite'
-              ContainerName: '$web'
+    - script: |
+        npm run build
+      displayName: 'npm build'
+    
+    - task: AzureFileCopy@4
+      inputs:
+        SourcePath: 'build/*'
+        azureSubscription: 'AzureDevopsServicePrincipal'
+        Destination: 'AzureBlob'
+        storage: 'glasswallsresite'
+        ContainerName: '$web'
