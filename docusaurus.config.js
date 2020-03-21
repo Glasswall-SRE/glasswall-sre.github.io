@@ -14,10 +14,11 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        { to: 'docs/doc1', label: 'Docs', position: 'left' },
+        { to: 'docs/about/what-is-sre', label: 'Docs', position: 'left' },
+        { to: 'docs/products/filetrust-email/introduction', label: 'Products', position: 'left' },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Glasswall-SRE',
           label: 'GitHub',
           position: 'right',
         },
@@ -30,25 +31,22 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'What is SRE',
+              to: 'docs/about/what-is-sre',
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Products',
+              to: 'docs/products/filetrust-email',
             },
           ],
         },
         {
           title: 'Community',
           items: [
+
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Medium',
+              href: 'https://medium.com/glasswall-engineering',
             },
           ],
         },
@@ -61,16 +59,16 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/Glasswall-SRE',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/GlasswallGlobal',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Glasswall SRE. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -80,7 +78,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://dev.azure.com/glasswall/Glasswall%20Cloud/_git/Glasswall.SRE.Documentation?path=%2F',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
