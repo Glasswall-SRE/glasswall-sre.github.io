@@ -14,10 +14,11 @@
         src: 'img/logo.svg',
   ***REMOVED***
 ***REMOVED***
-***REMOVED*** to: 'docs/doc1', label: 'Docs', position: 'left' },
+***REMOVED*** to: 'docs/about/what-is-sre', label: 'Docs', position: 'left' },
+***REMOVED*** to: 'docs/products/filetrust-email/introduction', label: 'Products', position: 'left' },
 ***REMOVED*** to: 'blog', label: 'Blog', position: 'left' },
 ***REMOVED***
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/Glasswall-SRE',
           label: 'GitHub',
           position: 'right',
     ***REMOVED***
@@ -30,25 +31,22 @@
           title: 'Docs',
           items: [
     ***REMOVED***
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'What is SRE',
+              to: 'docs/about/what-is-sre',
         ***REMOVED***
     ***REMOVED***
-              label: 'Second Doc',
-              to: 'docs/doc2',
+              label: 'Products',
+              to: 'docs/products/filetrust-email',
         ***REMOVED***
     ***REMOVED***
     ***REMOVED***
 ***REMOVED***
           title: 'Community',
           items: [
+
     ***REMOVED***
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        ***REMOVED***
-    ***REMOVED***
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Medium',
+              href: 'https://medium.com/glasswall-engineering',
         ***REMOVED***
     ***REMOVED***
     ***REMOVED***
@@ -61,16 +59,16 @@
         ***REMOVED***
     ***REMOVED***
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/Glasswall-SRE',
         ***REMOVED***
     ***REMOVED***
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/GlasswallGlobal',
         ***REMOVED***
     ***REMOVED***
     ***REMOVED***
 ***REMOVED***
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Glasswall SRE. Built with Docusaurus.`,
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
@@ -80,7 +78,7 @@
 ***REMOVED***
           sidebarPath: require.resolve('./sidebars.js'),
 ***REMOVED***
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://dev.azure.com/glasswall/Glasswall%20Cloud/_git/Glasswall.SRE.Documentation?path=%2F',
     ***REMOVED***
 ***REMOVED***
           customCss: require.resolve('./src/css/custom.css'),

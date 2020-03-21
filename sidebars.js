@@ -1,13 +1,28 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+***REMOVED***
+  docs: [
+    {
+      type: 'category',
+      label: 'About',
+      items: [
+        "about/what-is-sre",
+        "about/sre-concepts"
+      ]
+***REMOVED***
+    {
+      type: 'category',
+      label: 'Products',
+      items: [
+***REMOVED***
+          type: 'category',
+          label: 'FileTrust Email',
+          items: [
+            "products/filetrust-email/introduction",
+            "products/filetrust-email/slos",
+            "products/filetrust-email/data-management"
+          ]
+    ***REMOVED***
 
-***REMOVED***
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
-***REMOVED***
+      ]
+    }
+  ]
 ***REMOVED***
