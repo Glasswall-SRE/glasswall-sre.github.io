@@ -1,6 +1,6 @@
 ---
-title: SRE Concepts
-description: Site Reliability Engineering
+title: SLO and SLIs
+description: SLO and SLIs
 ---
 
 ## SLI and SLOs
@@ -20,8 +20,4 @@ SLIs are ways for us to communicate quantitative data about systems. To agree th
 Is a way of using an SLO to define the capacity of error. For example, if we have an SLO stating: "95% of emails will successfully pass through FileTrust" then every 100 emails we have an error budget of 5 emails. You can use an error budget to control the velocity of releases. For example, if the success rate is 99% and you have a 4% budget left so you could increase releases that could increase the risk of the budget shrinking. In inverse, if the success rate is 80% due to increased releases that are breaking the system then you slow down releases till you have the budget.
 
 Examples can be found on the [SRE workbook](https://landing.google.com/sre/workbook/chapters/slo-document/ "Example SLO Document")
-
-## Automation
-
-### Toil
 
