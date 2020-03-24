@@ -2,8 +2,16 @@
   docs: [
     {
       type: "category",
-      label: "About",
-      items: ["about/what-is-sre", "about/sre-concepts"]
+      label: "SRE",
+      items: ["sre/what-is-sre", "sre/slo-slis", "sre/error-budget-policy"]
+***REMOVED***
+    {
+      type: "category",
+      label: "Incident and Monitoring",
+      items: [
+        "incident-monitoring/incident-classification",
+        "incident-monitoring/incident-management"
+      ]
 ***REMOVED***
     {
       type: "category",
