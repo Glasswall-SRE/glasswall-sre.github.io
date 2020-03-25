@@ -7,10 +7,16 @@ module.exports = {
     },
     {
       type: "category",
+      label: "Production",
+      items: []
+    },
+    {
+      type: "category",
       label: "Incident and Monitoring",
       items: [
         "incident-monitoring/incident-classification",
-        "incident-monitoring/incident-management"
+        "incident-monitoring/incident-management",
+        "incident-monitoring/monitoring"
       ]
     },
     {

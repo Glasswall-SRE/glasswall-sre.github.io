@@ -20,7 +20,7 @@ module.exports = {
           label: "Products",
           position: "left"
         },
-        { to: "blog", label: "Blog", position: "left" },
+        { to: "supported-tech", label: "Supported Tech", position: "left" },
         {
           href: "https://github.com/Glasswall-SRE",
           label: "GitHub",
