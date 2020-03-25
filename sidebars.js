@@ -7,10 +7,16 @@
 ***REMOVED***
     {
       type: "category",
+      label: "Production",
+      items: []
+***REMOVED***
+    {
+      type: "category",
       label: "Incident and Monitoring",
       items: [
         "incident-monitoring/incident-classification",
-        "incident-monitoring/incident-management"
+        "incident-monitoring/incident-management",
+        "incident-monitoring/monitoring"
       ]
 ***REMOVED***
     {

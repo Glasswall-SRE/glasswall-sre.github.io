@@ -20,7 +20,7 @@
 ***REMOVED***
           position: "left"
     ***REMOVED***
-***REMOVED*** to: "blog", label: "Blog", position: "left" },
+***REMOVED*** to: "supported-tech", label: "Supported Tech", position: "left" },
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***

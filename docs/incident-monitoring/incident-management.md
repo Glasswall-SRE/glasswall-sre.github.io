@@ -42,5 +42,5 @@ A postmortem is a written record of an incident, its impact, the actions taken t
 * On-call engineer intervention (release rollback, rerouting of traffic, etc.)
 * A resolution time above some threshold
 * A monitoring failure (which usually implies manual incident discovery)
-* A stakeholder may request a postmortem for an event
+* A stakeholder may request a postmortem for an event.
 
