@@ -7,6 +7,12 @@ module.exports = {
   organizationName: "Glasswall", // Usually your GitHub org/user name.
   projectName: "SRE", // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: "064acddd10c4e945f87f7fdfaab7579f",
+      indexName: "glasswallsolutions_sre",
+      algoliaOptions: {} // Optional, if provided by Algolia
+    },
+    disableDarkMode: true,
     navbar: {
       title: "Glasswall SRE",
       logo: {
@@ -22,56 +28,16 @@ module.exports = {
         },
         { to: "supported-tech", label: "Supported Tech", position: "left" },
         {
+          href: "https://medium.com/glasswall-engineering",
+          label: "Medium",
+          position: "right"
+        },
+        {
           href: "https://github.com/Glasswall-SRE",
           label: "GitHub",
           position: "right"
         }
       ]
-    },
-    footer: {
-      style: "dark",
-      links: [
-        {
-          title: "Docs",
-          items: [
-            {
-              label: "What is SRE",
-              to: "docs/sre/what-is-sre"
-            },
-            {
-              label: "Products",
-              to: "docs/products/filetrust-email"
-            }
-          ]
-        },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "Medium",
-              href: "https://medium.com/glasswall-engineering"
-            }
-          ]
-        },
-        {
-          title: "Social",
-          items: [
-            {
-              label: "Blog",
-              to: "blog"
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/Glasswall-SRE"
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/GlasswallGlobal"
-            }
-          ]
-        }
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} Glasswall SRE. Built with Docusaurus.`
     }
   },
   presets: [
