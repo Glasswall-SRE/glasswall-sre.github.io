@@ -8,6 +8,12 @@
 ***REMOVED***
 ***REMOVED***
 ***REMOVED***
+      apiKey: "064acddd10c4e945f87f7fdfaab7579f",
+***REMOVED***
+      algoliaOptions: {} // Optional, if provided by Algolia
+***REMOVED***
+***REMOVED***
+***REMOVED***
     ***REMOVED***
 ***REMOVED***
 ***REMOVED***
@@ -25,53 +31,13 @@
 ***REMOVED***
 ***REMOVED***
           position: "right"
+    ***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+          position: "right"
         }
       ]
-***REMOVED***
-    footer: {
-      style: "dark",
-***REMOVED***
-***REMOVED***
-          title: "Docs",
-          items: [
-    ***REMOVED***
-              label: "What is SRE",
-              to: "docs/sre/what-is-sre"
-        ***REMOVED***
-    ***REMOVED***
-    ***REMOVED***
-              to: "docs/products/filetrust-email"
-            }
-          ]
-    ***REMOVED***
-***REMOVED***
-          title: "Community",
-          items: [
-    ***REMOVED***
-    ***REMOVED***
-              href: "https://medium.com/glasswall-engineering"
-            }
-          ]
-    ***REMOVED***
-***REMOVED***
-          title: "Social",
-          items: [
-    ***REMOVED***
-              label: "Blog",
-              to: "blog"
-        ***REMOVED***
-    ***REMOVED***
-    ***REMOVED***
-              href: "https://github.com/Glasswall-SRE"
-        ***REMOVED***
-    ***REMOVED***
-              label: "Twitter",
-              href: "https://twitter.com/GlasswallGlobal"
-            }
-          ]
-        }
-***REMOVED***
-      copyright: `Copyright © ${new Date().getFullYear()} Glasswall SRE. Built with Docusaurus.`
     }
 ***REMOVED***
 ***REMOVED***
