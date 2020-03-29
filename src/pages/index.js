@@ -1,9 +1,10 @@
 import React from "react";
 import classnames from "classnames";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
+import { Button } from "@material-ui/core";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+
 import styles from "./styles.module.css";
 
 const features = [
@@ -68,14 +69,13 @@ function Home() {
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
-            <Link
-              className={classnames(
-                "button button--outline button--secondary button--lg"
-              )}
-              to={useBaseUrl("docs/production/journey-to-production")}
+            <Button
+              variant="contained"
+              color="white"
+              href={useBaseUrl("docs/production/journey-to-production")}
             >
-              Get Started
-            </Link>
+              Ready for Production?
+            </Button>
           </div>
         </div>
       </header>
