@@ -8,7 +8,10 @@ module.exports = {
     {
       type: "category",
       label: "Production",
-      items: []
+      items: [
+        "production/journey-to-production",
+        "production/production-readiness-review"
+      ]
     },
     {
       type: "category",
@@ -29,9 +32,16 @@ module.exports = {
           items: [
             "products/filetrust-email/introduction",
             "products/filetrust-email/slos",
-            "products/filetrust-email/data-management",
             "products/filetrust-email/releases",
-            "products/filetrust-email/logging-retention"
+            "products/filetrust-email/logging-retention",
+            "products/filetrust-email/incident-events",
+            {
+              type: "category",
+              label: "Security Policy",
+              items: [
+                "products/filetrust-email/security-policy/data-management"
+              ]
+            }
           ]
         }
       ]
