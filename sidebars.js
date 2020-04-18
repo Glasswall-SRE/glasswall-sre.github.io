@@ -3,7 +3,7 @@
     {
       type: "category",
       label: "SRE",
-      items: ["sre/what-is-sre", "sre/slo-slis", "sre/error-budget-policy"]
+      items: ["sre/what-is-sre", "sre/slo-slis", "sre/error-budget-policy", "sre/failure-friday"]
 ***REMOVED***
     {
       type: "category",
