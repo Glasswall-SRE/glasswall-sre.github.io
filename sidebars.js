@@ -1,10 +1,10 @@
-***REMOVED***
+module.exports = {
   docs: [
     {
       type: "category",
       label: "SRE",
       items: ["sre/what-is-sre", "sre/slo-slis", "sre/error-budget-policy", "sre/failure-friday"]
-***REMOVED***
+    },
     {
       type: "category",
       label: "Production",
@@ -12,7 +12,7 @@
         "production/journey-to-production",
         "production/production-readiness-review"
       ]
-***REMOVED***
+    },
     {
       type: "category",
       label: "Incident and Monitoring",
@@ -21,12 +21,12 @@
         "incident-monitoring/incident-management",
         "incident-monitoring/monitoring"
       ]
-***REMOVED***
+    },
     {
       type: "category",
       label: "Products",
       items: [
-***REMOVED***
+        {
           type: "category",
           label: "FileTrust Email",
           items: [
@@ -35,7 +35,7 @@
             "products/filetrust-email/releases",
             "products/filetrust-email/logging-retention",
             "products/filetrust-email/incident-events",
-    ***REMOVED***
+            {
               type: "category",
               label: "Security Policy",
               items: [
@@ -45,11 +45,11 @@
           ]
         }
       ]
-***REMOVED***
+    },
     {
       type: "category",
       label: "Standards",
       items: ["standards/software"]
     }
   ]
-***REMOVED***
+};

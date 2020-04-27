@@ -18,7 +18,7 @@ const features = [
         of availability no matter what product they use.
       </>
     )
-***REMOVED***
+  },
   {
     title: <>Consulting and Guidance</>,
     imageUrl: "img/consulting.svg",
@@ -28,7 +28,7 @@ const features = [
         scalable available products.
       </>
     )
-***REMOVED***
+  },
   {
     title: <>Infrastructure</>,
     imageUrl: "img/construction.svg",
@@ -45,7 +45,7 @@ function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
     <div className={classnames("col col--4", styles.feature)}>
-***REMOVED***imgUrl && (
+      {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
@@ -80,11 +80,11 @@ function Home() {
         </div>
       </header>
       <main>
-***REMOVED***features && features.length && (
+        {features && features.length && (
           <section className={styles.features}>
             <div className="container">
               <div className="row">
-        ***REMOVED***features.map((props, idx) => (
+                {features.map((props, idx) => (
                   <Feature key={idx} {...props} />
                 ))}
               </div>
