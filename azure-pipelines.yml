@@ -5,6 +5,23 @@ trigger:
 pool:
   vmImage: 'windows-2019'
 steps:
+
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'AzureDevopsServicePrincipal'
+        KeyVaultName: 'akv-ukw-gwc-qa'
+        SecretsFilter: 'sre-site-algolia-api-key'
+    - task: replacetokens@3
+      inputs:
+        targetFiles: '**/*.config.js'
+        encoding: 'auto'
+        writeBOM: true
+        actionOnMissing: 'fail'
+        keepToken: false
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+        useLegacyPattern: false
+        enableTelemetry: true
     - task: UseNode@1
       inputs:
         checkLatest: true
@@ -17,6 +34,7 @@ steps:
     - script: |
         npm run build
       displayName: 'npm build'
+  
     
     - task: AzureFileCopy@4
       inputs:
