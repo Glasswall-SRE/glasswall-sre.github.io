@@ -1,0 +1,45 @@
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+steps:
+
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'AzureDevopsServicePrincipal'
+        KeyVaultName: 'akv-ukw-gwc-qa'
+        SecretsFilter: 'sre-site-algolia-api-key'
+    - task: replacetokens@3
+      inputs:
+        targetFiles: '**/*.config.js'
+        encoding: 'auto'
+        writeBOM: true
+        actionOnMissing: 'fail'
+        keepToken: false
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+        useLegacyPattern: false
+        enableTelemetry: true
+    - task: UseNode@1
+      inputs:
+        checkLatest: true
+      displayName: 'install latest node'
+
+    - script: |
+        npm install
+      displayName: 'npm install'
+
+    - script: |
+        npm run build
+      displayName: 'npm build'
+  
+    
+    - task: AzureFileCopy@4
+      inputs:
+        SourcePath: 'build/*'
+        azureSubscription: 'AzureDevopsServicePrincipal'
+        Destination: 'AzureBlob'
+        storage: 'glasswallsresite'
+        ContainerName: '$web'
