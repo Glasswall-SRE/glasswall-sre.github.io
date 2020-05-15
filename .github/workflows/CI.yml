@@ -17,7 +17,7 @@ jobs:
     
     - uses: actions/setup-node@v1
 
-    - name: Installation 	⏳
+    - name: Installation ⏳
       run: yarn
    
     - name: Build 🧱
