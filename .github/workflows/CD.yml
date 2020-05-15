@@ -24,7 +24,7 @@ jobs:
     - uses: actions/setup-node@v1
     
     - name: NPM Version
-      run: npm -v
+      run: echo npm -v
     
     - name: Install Yarn
       run: npm i --global yarn
