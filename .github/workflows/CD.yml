@@ -19,6 +19,8 @@ jobs:
     - uses: actions/checkout@v2
     
     - uses: bahmutov/npm-install@v1
+    
+    - name: NPM Version
       run: npm -v
 
     # Runs a single command using the runners shell
