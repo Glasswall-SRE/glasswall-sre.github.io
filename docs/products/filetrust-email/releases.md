@@ -15,7 +15,7 @@ description: FileTrust Email Release notes
 
 #### Bug Fixes
 
-* Portal T & Cs correctly displayed.
+* Portal T&Cs correctly displayed.
 * Policy sender domains enforced.
 * General resilience improvements.
 
