@@ -8,9 +8,6 @@ on:
   pull_request:
     branches: source
 
-env:
-  GIT_USER: tpilvelis-gw
-
 jobs:
   # This workflow contains a single job called "build"
   build:
