@@ -8,6 +8,9 @@ on:
   pull_request:
     branches: source
 
+env:
+  GIT_USER: tpilvelis-gw
+
 jobs:
   # This workflow contains a single job called "build"
   build:
@@ -28,6 +31,4 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Yarn Deploy
-      env:
-        user: tpilvelis-gw
-      run: GIT_USER=${{ user }} yarn deploy
+      run: GIT_USER=${{env.GIT_USER}} yarn deploy
