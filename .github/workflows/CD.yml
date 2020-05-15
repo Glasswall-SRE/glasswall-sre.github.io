@@ -25,5 +25,5 @@ jobs:
     - name: Installation
       run: yarn
    
-    - name: Yarn Deploy
-      run: GIT_USER=${{env.GIT_USER}} yarn deploy
+    - name: Build
+      run: yarn build
