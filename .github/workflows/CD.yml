@@ -28,6 +28,6 @@ jobs:
 
     # Runs a set of commands using the runners shell
     - name: Yarn Deploy
-      run: GIT_USER=$GIT_USER yarn deploy
+      run: GIT_USER=${{ GIT_USER }} yarn deploy
       env:
         GIT_USER: tpilvelis-gw
