@@ -18,20 +18,12 @@ jobs:
     
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     
     - uses: actions/setup-node@v1
-    
-    - name: NPM Version
-      run: echo npm -v
-    
-    - name: Install Yarn
-      run: npm i --global yarn
-      
-    - name: Yarn Version
-      run: yarn -v
 
-    # Runs a set of commands using the runners shell
+    - name: Installation
+      run: yarn
+   
     - name: Yarn Deploy
       run: GIT_USER=${{env.GIT_USER}} yarn deploy
