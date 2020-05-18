@@ -20,11 +20,20 @@ jobs:
     - name: Build 🧱
       run: yarn build
 
-    - uses: cypress-io/github-action@v1
+    - name: Testing 💉
+      uses: cypress-io/github-action@v1
       with:
         start: yarn start
         wait-on: 'http://localhost:3000'
-
+        
+    - name: SonarCloud Scan 🔍
+      uses: SonarSource/sonarcloud-github-action@v1.2
+      with:
+        projectBaseDir: .
+      env:      
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+    
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
