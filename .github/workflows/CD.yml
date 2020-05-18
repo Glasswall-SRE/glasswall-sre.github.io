@@ -1,6 +1,8 @@
-name: CI
+name: CD
 
-on: push
+on:
+  pull_request:
+    branches: source
 
 jobs:
 
@@ -30,4 +32,11 @@ jobs:
         projectBaseDir: .
       env:      
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+    
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: master
+        FOLDER: build
