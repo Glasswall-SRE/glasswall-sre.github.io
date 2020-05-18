@@ -21,7 +21,7 @@ jobs:
     - name: Build 🧱
       run: yarn build
     
-    - name: Start Local Host to Test :syringe:
+    - name: Start Local Host to Test 💉
       run: yarn start
 
     - uses: cypress-io/github-action@v1
