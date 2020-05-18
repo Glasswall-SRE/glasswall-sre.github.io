@@ -23,15 +23,10 @@ jobs:
     - name: Build 🧱
       run: yarn build
 
-    #- uses: actions/upload-artifact@v1
-    #  with:
-    #    name: build
-    #    path: build
-
     - uses: cypress-io/github-action@v1
-    with:
-      browser: chrome
-        
+      with:
+        browser: chrome
+
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
