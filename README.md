@@ -12,6 +12,7 @@ To assist Glasswall and the wider community in achieving production ready standa
 
 ![CI](https://github.com/glasswall-sre/glasswall-sre.github.io/workflows/CI/badge.svg)
 ![CD](https://github.com/glasswall-sre/glasswall-sre.github.io/workflows/CD/badge.svg)
+![](https://img.shields.io/badge/Glasswall%20SRE-Approved-success)
 
 # Tech / Framework
 - Docusaurus 2
