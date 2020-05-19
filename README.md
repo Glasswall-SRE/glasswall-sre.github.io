@@ -1,3 +1,5 @@
+<div align="center" style="text-align:center">
+
 # Glasswall SRE Website
 The Glasswall SRE Team Documentation Site
 
