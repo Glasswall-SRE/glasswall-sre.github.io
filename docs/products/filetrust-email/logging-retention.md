@@ -1,6 +1,6 @@
 ---
 title: Logging Retention
-description: Logging Retention for FileTrust EMail
+description: Logging Retention for Rebuild for Email
 ---
 
 # Policies

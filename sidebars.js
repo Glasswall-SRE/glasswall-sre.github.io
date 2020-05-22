@@ -28,18 +28,18 @@ module.exports = {
       items: [
         {
           type: "category",
-          label: "FileTrust Email",
+          label: "Rebuild for Email",
           items: [
-            "products/filetrust-email/introduction",
-            "products/filetrust-email/slos",
-            "products/filetrust-email/releases",
-            "products/filetrust-email/logging-retention",
-            "products/filetrust-email/incident-events",
+            "products/rebuild-email/introduction",
+            "products/rebuild-email/slos",
+            "products/rebuild-email/releases",
+            "products/rebuild-email/logging-retention",
+            "products/rebuild-email/incident-events",
             {
               type: "category",
               label: "Security Policy",
               items: [
-                "products/filetrust-email/security-policy/data-management"
+                "products/rebuild-email/security-policy/data-management"
               ]
             }
           ]

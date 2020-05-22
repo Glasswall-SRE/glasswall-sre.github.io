@@ -1,6 +1,6 @@
 ---
 title: Releases
-description: FileTrust Email Release notes
+description: Rebuild for Email Release notes
 ---
 
 ## [v1.1]
@@ -33,7 +33,7 @@ description: FileTrust Email Release notes
 
 #### SMTP Email Protection
 
-* Transactional Log for all emails that go through FileTrust Email.
+* Transactional Log for all emails that go through Rebuild for Email.
 * User File Release Request. Able to request a held file to be released as a user.
 * SMTP Resilience and Recovery. High resilience for receiving, processing and relaying SMTP mail.
 * Data retention of email data.
