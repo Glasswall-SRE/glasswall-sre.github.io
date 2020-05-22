@@ -1,11 +1,11 @@
 ---
 title: Data Management
-description: How FileTrust Email's Data is managed.
+description: How Rebuild for Email's Data is managed.
 ---
 
 # Introduction
 
-This section contains key information on how we manage data within the FileTrust email.
+This section contains key information on how we manage data within Rebuild for Email.
 
 
 **Keywords**:

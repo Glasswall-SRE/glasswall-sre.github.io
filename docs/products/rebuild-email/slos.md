@@ -1,6 +1,6 @@
 ---
 title: SLOs and SLIs
-description: FileTrust Email's Service Levels
+description: Rebuild for Email's Service Levels
 ---
 
 # SLI and SLOs

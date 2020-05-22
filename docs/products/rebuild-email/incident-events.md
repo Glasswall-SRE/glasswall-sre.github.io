@@ -11,7 +11,7 @@ For each product at Glasswall there needs to be different levels of incident cla
 
 * A key mailflow microservice has stopped processing from a queue.
 * No mail is able to be relayed to external mail services across multiple tenants.
-* No mail is able to be relayed into FileTrust Email.
+* No mail is able to be relayed into Rebuild for Email.
 
 ## Priority 2 (P1)
 
