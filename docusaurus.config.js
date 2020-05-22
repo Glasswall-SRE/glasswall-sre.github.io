@@ -22,7 +22,7 @@ module.exports = {
       links: [
         { to: "docs/sre/what-is-sre", label: "Docs", position: "left" },
         {
-          to: "docs/products/filetrust-email/introduction",
+          to: "docs/products/rebuild-email/introduction",
           label: "Products",
           position: "left",
         },
@@ -47,7 +47,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl:
-            "https://dev.azure.com/glasswall/Glasswall%20Cloud/_git/Glasswall.SRE.Documentation?path=%2F",
+            "https://github.com/glasswall-sre/glasswall-sre.github.io",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
