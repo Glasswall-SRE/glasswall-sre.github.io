@@ -6,7 +6,7 @@ The Glasswall SRE Team Documentation Site
 </div>
 
 # Motivation
-To assist Glasswall and the wider community in achieving production ready standards and scalable products.
+To assist Glasswall and the wider community in achieving production ready standards and scalable products. 
 
 # Pipeline Status
 
