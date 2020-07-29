@@ -14,113 +14,36 @@ to get used to the way we write/manage/maintain software.
 This document will give an overview of our standards, and will evolve over
 time as we expand our remit in terms of engineering work that we do.
 
-Please note that standards outlined here are **ONLY** for SRE-related
-engineering projects, and shouldn't necessarily be enforced on non-SRE
-projects (unless there are any fans of these processes, of course!).
-
 We have standards for the following areas:
 
-* [Project folder structure](#project-folder-structure-standards)
-* [README files](#readme-standards)
-* [Code style](#code-style-standards)
-* [Documentation](#documentation-standards)
-* [Testing](#testing-standards)
-* [Source control](#source-control-standards)
-* [Work tracking](#work-tracking-standards)
-* [CI/CD](#ci-and-cd-standards)
-* [Configuration](#configuration-standards)
-* [Code review](#code-review-standards)
-* [Logging](#logging-standards)
-
-# Project folder structure standards
-
-All project repositories should roughly follow this format. Obviously it
-can vary on a case by case basis, but if it varies too far make sure it's
-clearly documented.
-
-* `Glasswall.SRE.{project name}/` : The repo should be given a descriptive name.
-
-        A namespace must be provided for the project. For example, a FileTrust
-        project should reside within `Glasswall.SRE.FileTrust.{project name}` .
-
-    - `src/` : This folder is where the source code lives. Subfolders here are
-
-            optional, and can be added to/removed based on project needs.
-            Folder names can optionally be prefixed with namespaces in things
-            that require it, for example in C# projects.
-
-        - `business/` : The application business logic should be in here.
-        - `common/` : Common functionality (that can be reused elsewhere) should
-
-                be in here.
-
-        - `database/` : Any DDL or other database related things should be
-
-                stored in here.
-
-        - `initialisation/` : Application entry point(s) and init code should be
-
-                here.
-
-        - `service/` : For microservices, the `main()` method, dockerfiles, helm
-
-                charts etc should be in here.
-
-        - `config/` : For projects with lots of config, they should all be in
-
-                this folder, otherwise a single config file in place of this
-                will work fine.
-
-    - `test/` : This folder is where code for tests lives. Obviously if no tests
-
-            of a certain type exist subfolders for them should not be present
-            in the project. As with the `src/` folder, test folders can
-            optionally be prefixes with namespaces.
-
-        - `l0/` : This is where L0 tests should be stored.
-        - `l1/` : L1 tests.
-        - `l2/` : L2 tests.
-        - `l3/` : L3 tests.
-        - `common/` : Common test functionality can be stored here.
-    - `.gitignore` : All projects should have a gitignore.
-    - `README.md` : All projects should have a markdown README.
-    - `{...}` : Any other files that make sense being in the root, for example
-
-`docker-compose.yml` , C# `.sln` files, `setup.py` , `Pipfile` , etc.
-
-A good case for customising this project structure would be if you're making
-something that implicitly needs a different structure, for example if you're
-writing a Python package, where client usage is tied to folder structure.
-In cases like this, simply make sure the structure is logical and well
-documented. An example of this would be:
-
-* `Glasswall.SRE.Common.coolpythonpackage/` 
-    - `src` 
-        - `coolpythonpackage/` 
-            - `__init__.py` 
-            - `common.py` 
-            - `coolfunctionality.py` 
-        - `config/` 
-            - `config.yml` 
-            - `log-config.yml` 
-    - `test/` 
-        - `__init__.py` 
-        - `l0/` 
-            - `__init__.py` 
-            - `test_common.py` 
-            - `test_coolfunctionality.py` 
-        - `common/` 
-            - `__init__.py` 
-            - `common_setup.py` 
-    - `.gitignore` 
-    - `README.md` 
-    - `Pipfile` 
-    - `setup.py` 
-
-Some projects may have subprojects. In this case, subprojects should be stored
-in folders in the root directory of the repo, and subproject structure within
-these folders should match regular project structure as outlined in this
-section.
+- [Purpose](#purpose)
+- [README standards](#readme-standards)
+- [Code style standards](#code-style-standards)
+  - [Style guides](#style-guides)
+    - [Python](#python)
+      - [Overrides](#overrides)
+- [Documentation standards](#documentation-standards)
+  - [Code documentation](#code-documentation)
+  - [READMEs](#readmes)
+  - [API documentation](#api-documentation)
+  - [User interface documentation](#user-interface-documentation)
+  - [Config documentation](#config-documentation)
+  - [Other documentation](#other-documentation)
+- [Testing standards](#testing-standards)
+  - [Python](#python-1)
+- [Source control standards](#source-control-standards)
+  - [Branch naming](#branch-naming)
+  - [Commit messages](#commit-messages)
+  - [Pull requests](#pull-requests)
+  - [Ignoring files](#ignoring-files)
+  - [Secrets](#secrets)
+- [CI and CD standards](#ci-and-cd-standards)
+  - [Gated build](#gated-build)
+  - [CI build (continuous integration)](#ci-build-continuous-integration)
+  - [CD build (continuous deployment)](#cd-build-continuous-deployment)
+- [Configuration standards](#configuration-standards)
+- [Code review standards](#code-review-standards)
+- [Logging standards](#logging-standards)
 
 # README standards
 
@@ -130,36 +53,52 @@ everything they'll need to know about it.
 
 The structure should be as follows:
 
-``` markdown
+```markdown
 # {Project title}
 One paragraph description of project.
 
-## Getting started
+## User guide
+A guide on how to use the software from a user perspective. This can be
+omitted if it's not user-facing software (i.e. a microservice or a cron
+lambda).
 
+### Installation
+How to install the software.
+
+### Usage examples
+Quick examples of how to use the software.
+
+### Detailed guide
+More detail of the usage goes here.
+
+## Developer guide
 Instructions to clone the repo and get started with developing the project.
 
 ### Prerequisites
-
 A list of things you need to install to develop the project.
 
 ### Quick start
-
 A (quick!) guide to getting the project up and running.
 
-### Testing
+### Documentation
+A link to the documentation of your project (if it has a link). This should
+be something like an API reference.
 
-A guide to running tests that should (and can be) run locally. Think L0s and L1s.
+### Testing
+A guide to running tests that should (and can be) run locally. These are your
+unit and integration tests.
 
 ### Deployment
-
 A guide on how to deploy the project.
 
 ## Folder structure
-
 Explain the folder structure of your project in a hierarhical way with bullet points.
 
 Any other useful information you can think of.
 ```
+
+You can put the sections in any order you want as long as it makes logical sense.
+You can also omit sections if they aren't relevant to your project.
 
 All projects need to have a README. If a project does not have a README this is
 considered a bug. If a project has an empty README this is a bug. If a project
@@ -191,8 +130,8 @@ Google's style guide: https://google.github.io/styleguide/pyguide.html
 There's a good example of usage here: https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 * Use [YAPF](https://github.com/google/yapf) to automatically format your code.
-
   We recommend binding this to happen every time you save.
+* Use [Pylint](https://pypi.org/project/pylint/) to lint your code.
 
 #### Overrides
 
@@ -227,7 +166,8 @@ READMEs should be written in line with the [README standards](#readme-standards)
 
 If your application exposes any APIs be it HTTP, REST, RPC, or any other, then
 it must be documented. Documentation should be generated from some kind of spec
-using something like [Swagger](https://swagger.io/) for example.
+using something like [Swagger](https://swagger.io/) for example. For simple
+APIs a section in the README in the user guide will be fine.
 
 ## User interface documentation
 
@@ -250,7 +190,17 @@ within these files explaining anything that is not immediately clear.
 
 # Testing standards
 
-Testing standards can be found here: https://dev.azure.com/glasswall/Glasswall%20Cloud/_wiki/wikis/Glasswall-Cloud.wiki?pagePath=%2FTest%20Level%20Definitions
+We expect your code to have tests to ensure it's working to the specification.
+Other parts of Glasswall use tests called 'L0', 'L1' etc, we do not.
+We generally use unit and integration tests. We expect code coverage to be
+60% for existing code, and 80% for new code committed.
+
+We use [Codecov](https://codecov.io/gh/glasswall-sre) and
+[SonarCloud](https://sonarcloud.io/organizations/glasswall-cloud-key-a42w31/projects?sort=-analysis_date)
+to measure code coverage.
+
+## Python
+- Use [Pytest](https://docs.pytest.org/en/stable/) and [Pytest-Cov](https://pypi.org/project/pytest-cov/) to test your code and get code coverage.
 
 # Source control standards
 
@@ -267,13 +217,13 @@ All repositories adhere to the [feature branch workflow](https://www.atlassian.c
 Branches should be named in the following format:
 
 ``` 
-{initials}/{issue-number}-{issue-description}
+{initials}/{feature-description}
 ```
 
 For example:
 
 ``` 
-sg/98765-fix-queue-bug
+sg/fix-queue-bug
 ```
 
 The reason for this is so that you can identify whose branch it is, the
@@ -311,20 +261,14 @@ Please note that Google refers to these as a 'CL', or 'change list'.
 
 ## Pull requests
 
-Feature branches are pushed to master, and when the feature is complete, a
+Feature branches are pushed to, and when the feature is complete, a
 pull request is created to request that the feature changes are 'pulled' into
 the master branch.
 
-Pull requests will need to be reviewed and approved by 2 other members of the
-team before they are able to be merged. Additionally, a gated CI build should
+Pull requests will need to be reviewed and approved by another member of the
+team before they are able to be merged. Additionally, a gated build should
 be run and only allow the PR to be merged if it builds successfully. For more
 information please see the section on [CI/CD standards](#ci-and-cd-standards).
-
-If possible and realistic, it is preferable to rebase the changes in the
-feature branch onto the master branch, as this keeps the graph clean and
-easy to understand.[Here is some advice](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
-on rebasing versus merging. In particular, follow the advice in the 'The
-Golden Rule of Rebasing' section.
 
 ## Ignoring files
 
@@ -342,40 +286,13 @@ think you're doing. Because it's not right.
 If you accidentally commit a secret to source control, deleting the file and
 committing again will not remove it. With access to the repo, someone can still
 roll back and find the secret. You will need to go back and remove this file
-from the cache. This is a massive pain to do, and takes up a lot of time. So
+from the cache. You also need to revoke the secret you committed, as you should
+consider it to be automatically compromised. 
+This is a massive pain to do, and takes up a lot of time. So
 the simple solution is to **NOT STORE SECRETS IN SOURCE CONTROL**.
 
 If you ever need to remove a secret you've accidentally committed, see
 [the advice here](https://help.github.com/en/articles/removing-sensitive-data-from-a-repository). But you shouldn't need to, right?
-
-# Work tracking standards
-
-All work needs to be tracked on [our issue board](https://dev.azure.com/glasswall/Glasswall%20Cloud/_boards/board/t/Glasswall%20DevOps%20Team/Backlog%20items).
-When a piece of work is being planned, create a product backlog item (PBI) on
-the board under the 'New' column. Ask someone in charge to look over this piece
-of work and see if it aligns with our current goals, and if they sign off on it
-then move it into the approved column.
-
-Issue names should be descriptive enough for someone to get a good impression
-of what a piece of work will entail at a glance. For example, this is the
-difference between "Helm - Tag Filetrust Releases" and "Tag Releases". Within an issue, there should be a description that gives a more detailed
-description of the backlog item. This should be where you propose how to
-potentially do it, as well as link to useful sources if necessary.
-
-Tasks should be given to PBIs delineating the steps to complete the work item, 
-but be careful not to make them too granular, as that could get ridiculous.
-
-When picking up work, you check the 'Approved' column of the board, assign
-yourself to the task, and move it to the 'In Development' column. From here
-you can comment on the issue to give updates and tick off tasks as you go.
-When you've completed the work you can move it into the 'Done' column and start
-the process over.
-
-In any work that you do related to the issue, you should refer back to the
-issue ID as much as possible, for example in branch names/commit messages.
-
-See the [source control standards section](#source-control-standards) for more
-detailed guidelines.
 
 # CI and CD standards
 
@@ -385,12 +302,7 @@ as a lot of the actions that occur in a pipeline are quite bespoke and will
 vary a lot depending on what is being built and where it's being deployed
 to.
 
-## Building (CI)
-
-Code builds are done when there are new commits on a certain branch. The type
-of the build depends on which branch has commits.
-
-### Gated build
+## Gated build
 
 This pipeline builds code from pull requests onto the master branch. Any code
 that is requested to be merged onto the master branch must trigger a gated
@@ -401,7 +313,10 @@ This build is set up on the master branch's branch policy to run as a build
 validation step. If the build fails then the code will not be allowed to be
 merged into master.
 
-### CI build
+It should also check code coverage with services like Codecov and SonarCloud,
+rejecting the PR if it's not up to scratch.
+
+## CI build (continuous integration)
 
 This pipeline builds code off of new commits to the master branch. Any time
 there are new commits available in the master branch it should automatically
@@ -411,7 +326,7 @@ needed to deploy it.
 These artifacts are kept in storage so that we can release new deployments and
 roll back to old ones at whim.
 
-## Releasing (CD)
+## CD build (continuous deployment)
 
 When an artifact is ready after the CI build, it needs to be deployed
 somewhere -- this is what release pipelines are for. Due to the fact that
@@ -419,13 +334,10 @@ projects are going to vary so much in terms of where they're being deployed to
 as well as how they should be deployed, it's difficult to write standards for
 this currently.
 
-In general:
-
-* Automation scripts must be written in Python and source controlled
-* Releases should be triggered automatically wherever it makes sense to do so, 
-
-  for example a release should be automatically created and rolled out to a
-  development/testing environment as soon as an artifact is available.
+In general, the CD build needs to be:
+- easy to roll back in the event of a failure
+- repeatable and idempotent
+- should require SRE approval to release to a production environment with many customers
 
 # Configuration standards
 
