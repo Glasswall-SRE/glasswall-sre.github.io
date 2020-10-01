@@ -12,14 +12,16 @@ module.exports = {
       indexName: "glasswallsolutions_sre",
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
-    disableDarkMode: true,
+    colorMode: {
+      disableSwitch: true
+    },
     navbar: {
       title: "Glasswall SRE",
       logo: {
         alt: "My Site Logo",
         src: "img/logo.svg",
       },
-      links: [
+      items: [
         { to: "docs/sre/what-is-sre", label: "Docs", position: "left" },
         {
           to: "docs/products/rebuild-email/introduction",
