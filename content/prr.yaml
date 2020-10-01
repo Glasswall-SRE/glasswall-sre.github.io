@@ -1,0 +1,68 @@
+title: "1. Coding Standards Requirements"
+content:
+  - item:
+    action: "1.1. Python"
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item:
+    action: "1.1.1. Adherance to the Google Style Guide for Python."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item:
+    action: "1.1.2. Use of pylint should be used as a minimum."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item:
+    action: "1.2. C#"
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item:
+    action: "1.2.1. Adherance to the Style Guide used within the Glasswall Cloud Team."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.2.2. Use of SonarCloud."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.3. Further Languages"
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.3.1. Use of any further languages must be on the Glasswall SRE Tech Radar. The langauge must have an approved quality gate and standards."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.4. Secrets SHOULD NOT be stored in code / source control."
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.5. Optional"
+    completed: 
+    date:
+    signoff:
+    evidence:
+  - item: 
+    action: "1.5.1. Cyclomatic Complexity, The lower the value, the easier it is to test, read, understand. Key properties of production code. If the need of a developer that created the code is required, it is not production ready."
+    completed: 
+    date:
+    signoff:
+    evidence:

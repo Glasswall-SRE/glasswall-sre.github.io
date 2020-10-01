@@ -43,6 +43,13 @@ module.exports = {
               ]
             }
           ]
+        },
+        {
+          type: "category",
+          label:"Rebuild API",
+          items:[
+            "products/rebuild-api/PRR"
+          ]
         }
       ]
     },
