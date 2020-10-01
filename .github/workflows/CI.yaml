@@ -2,7 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches: source
+    branches: master
 
 jobs:
 
@@ -26,10 +26,10 @@ jobs:
         start: yarn start
         wait-on: 'http://localhost:3000'
         
-    - name: SonarCloud Scan 🔍
-      uses: SonarSource/sonarcloud-github-action@v1.2
-      with:
-        projectBaseDir: .
-      env:      
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    # - name: SonarCloud Scan 🔍
+    #   uses: SonarSource/sonarcloud-github-action@v1.2
+    #   with:
+    #     projectBaseDir: .
+    #   env:      
+    #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

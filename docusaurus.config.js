@@ -6,6 +6,7 @@ module.exports = {
   projectName: "glasswall-sre.github.io", // Usually your repo name.
   url: "https://https://glasswall-sre.github.io/",
   baseUrl: "/",
+  onBrokenLinks: "warn",
   themeConfig: {
     algolia: {
       apiKey: "#{sre-site-algolia-api-key}#",
