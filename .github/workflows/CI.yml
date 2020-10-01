@@ -5,31 +5,30 @@ on:
     branches: source
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v2
-    
-    - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
 
-    - name: Installation ⏳
-      run: yarn
-   
-    - name: Build 🧱
-      run: yarn build
+      - uses: actions/setup-node@v1
 
-    - name: Testing 💉
-      uses: cypress-io/github-action@v1
-      with:
-        start: yarn start
-        wait-on: 'http://localhost:3000'
-        
-    - name: SonarCloud Scan 🔍
-      uses: SonarSource/sonarcloud-github-action@v1.2
-      with:
-        projectBaseDir: .
-      env:      
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}     
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Installation ⏳
+        run: yarn
+
+      - name: Build 🧱
+        run: yarn build
+
+      - name: Testing 💉
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn start
+          wait-on: "http://localhost:3000"
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v1.2
+        with:
+          projectBaseDir: .
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
