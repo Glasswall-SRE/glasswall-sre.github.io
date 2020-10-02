@@ -5,7 +5,7 @@ module.exports = {
   organizationName: "glasswall-sre", // Usually your GitHub org/user name.
   projectName: "glasswall-sre.github.io", // Usually your repo name.
   url: "https://https://glasswall-sre.github.io/",
-  onBrokenLinks: "warn"
+  onBrokenLinks: "warn",
   baseUrl: "/",
 
   themeConfig: {
