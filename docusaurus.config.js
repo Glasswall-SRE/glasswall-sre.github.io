@@ -6,20 +6,23 @@ module.exports = {
   projectName: "glasswall-sre.github.io", // Usually your repo name.
   url: "https://https://glasswall-sre.github.io/",
   baseUrl: "/",
+  
   themeConfig: {
     algolia: {
       apiKey: "#{sre-site-algolia-api-key}#",
       indexName: "glasswallsolutions_sre",
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
-    disableDarkMode: true,
+    colormode: {
+      disableSwitch: true
+    },
     navbar: {
       title: "Glasswall SRE",
       logo: {
         alt: "My Site Logo",
         src: "img/logo.svg",
       },
-      links: [
+      items: [
         { to: "docs/sre/what-is-sre", label: "Docs", position: "left" },
         {
           to: "docs/products/rebuild-email/introduction",
