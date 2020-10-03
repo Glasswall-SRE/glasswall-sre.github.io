@@ -60,3 +60,4 @@ $ yarn cypress
 
 # Contributions
 Contributions, ideas and bug reports are welcome and greatly appreciated. Please add issues for suggestions and bug reports or create a pull request.
+
