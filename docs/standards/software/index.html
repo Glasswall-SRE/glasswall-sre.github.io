@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="generator" content="Docusaurus v2.0.0-alpha.64">
-<link rel="search" type="application/opensearchdescription+xml" title="Glasswall SRE" href="/opensearch.xml"><title data-react-helmet="true">SRE Software Standards | Glasswall SRE</title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="SRE Software Standards | Glasswall SRE"><meta data-react-helmet="true" name="description" content="Standards for software development in SRE"><meta data-react-helmet="true" property="og:description" content="Standards for software development in SRE"><meta data-react-helmet="true" property="og:url" content="https://https://glasswall-sre.github.io//docs/standards/software"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="true"><link data-react-helmet="true" rel="canonical" href="https://https://glasswall-sre.github.io//docs/standards/software"><link rel="stylesheet" href="/styles.adee6118.css">
-<link rel="preload" href="/styles.bb8a1bc8.js" as="script">
-<link rel="preload" href="/runtime~main.2e9d449f.js" as="script">
-<link rel="preload" href="/main.82125445.js" as="script">
-<link rel="preload" href="/1.06c1dc71.js" as="script">
-<link rel="preload" href="/2.410b8886.js" as="script">
-<link rel="preload" href="/28.9e58abbe.js" as="script">
-<link rel="preload" href="/31.7d631685.js" as="script">
-<link rel="preload" href="/935f2afb.52ade4c4.js" as="script">
-<link rel="preload" href="/17896441.006d9f1b.js" as="script">
-<link rel="preload" href="/3c2eea91.939d266e.js" as="script">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.65">
+<link rel="search" type="application/opensearchdescription+xml" title="Glasswall SRE" href="/opensearch.xml"><title data-react-helmet="true">SRE Software Standards | Glasswall SRE</title><meta data-react-helmet="true" name="docsearch:version" content="current,latest"><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="SRE Software Standards | Glasswall SRE"><meta data-react-helmet="true" name="description" content="Standards for software development in SRE"><meta data-react-helmet="true" property="og:description" content="Standards for software development in SRE"><meta data-react-helmet="true" property="og:url" content="https://https://glasswall-sre.github.io//docs/standards/software"><link data-react-helmet="true" rel="shortcut icon" href="/img/favicon.ico"><link data-react-helmet="true" rel="preconnect" href="https://BH4D9OD16A-dsn.algolia.net" crossorigin="anonymous"><link data-react-helmet="true" rel="canonical" href="https://https://glasswall-sre.github.io//docs/standards/software"><link rel="stylesheet" href="/styles.165cd59d.css">
+<link rel="preload" href="/styles.b16485ef.js" as="script">
+<link rel="preload" href="/runtime~main.9bef9bf5.js" as="script">
+<link rel="preload" href="/main.e5968379.js" as="script">
+<link rel="preload" href="/1.ecc7d386.js" as="script">
+<link rel="preload" href="/2.28382b0d.js" as="script">
+<link rel="preload" href="/28.dc8b4546.js" as="script">
+<link rel="preload" href="/31.f4b64286.js" as="script">
+<link rel="preload" href="/935f2afb.fc4a7e70.js" as="script">
+<link rel="preload" href="/17896441.b96f0030.js" as="script">
+<link rel="preload" href="/3c2eea91.456cc11b.js" as="script">
 </head>
 <body>
 <script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();t(null!==e?e:"light")}()</script><div id="__docusaurus">
@@ -123,15 +123,15 @@ this currently.</p><p>In general, the CD build needs to be:</p><ul><li>easy to r
 that these configuration files are standardised among all of our projects, so
 things don&#x27;t start to get too different.</p><ul><li>Configuration files should be in YAML wherever possible</li><li>All configuration values should be well documented</li><li>Example configuration files must be provided</li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="code-review-standards"></a>Code review standards<a aria-hidden="true" tabindex="-1" class="hash-link" href="#code-review-standards" title="Direct link to heading">#</a></h1><p>We will follow Google&#x27;s standards for how to do code reviews: <a href="https://google.github.io/eng-practices/review/reviewer/" target="_blank" rel="noopener noreferrer">https://google.github.io/eng-practices/review/reviewer/</a></p><p>If you need some advice on how to have your code reviewed, again, <a href="https://google.github.io/eng-practices/review/developer/handling-comments.html" target="_blank" rel="noopener noreferrer">Google has
 us covered</a>.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_2cZh" id="logging-standards"></a>Logging standards<a aria-hidden="true" tabindex="-1" class="hash-link" href="#logging-standards" title="Direct link to heading">#</a></h1><p>The general accepted format for a log string is the following:</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">{UTC-timestamp} [{log-level}] &lt;{file}:{line-number}&gt; {message}</span></div></div></div></div></div><p>For example:</p><div class="mdxCodeBlock_1XEh"><div class="codeBlockContent_1u-d"><button type="button" aria-label="Copy code to clipboard" class="copyButton_10dd">Copy</button><div tabindex="0" class="prism-code language-log codeBlock_3iAC"><div class="codeBlockLines_b7E3" style="color:#bfc7d5;background-color:#292d3e"><div class="token-line" style="color:#bfc7d5"><span class="token plain">2019-09-06 10:47:50.099Z [DEBUG] &lt;mailsend.py:13&gt; Hello world!</span></div></div></div></div></div></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/glasswall-sre/glasswall-sre.github.io/docs/standards/software.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav" aria-label="Blog list page navigation"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/docs/products/rebuild-api/PRR"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">« PRR</div></a></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_3SO_"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#style-guides" class="table-of-contents__link">Style guides</a><ul><li><a href="#python" class="table-of-contents__link">Python</a></li></ul></li><li><a href="#code-documentation" class="table-of-contents__link">Code documentation</a></li><li><a href="#readmes" class="table-of-contents__link">READMEs</a></li><li><a href="#api-documentation" class="table-of-contents__link">API documentation</a></li><li><a href="#user-interface-documentation" class="table-of-contents__link">User interface documentation</a></li><li><a href="#config-documentation" class="table-of-contents__link">Config documentation</a></li><li><a href="#other-documentation" class="table-of-contents__link">Other documentation</a></li><li><a href="#python-1" class="table-of-contents__link">Python</a></li><li><a href="#branch-naming" class="table-of-contents__link">Branch naming</a></li><li><a href="#commit-messages" class="table-of-contents__link">Commit messages</a></li><li><a href="#pull-requests" class="table-of-contents__link">Pull requests</a></li><li><a href="#ignoring-files" class="table-of-contents__link">Ignoring files</a></li><li><a href="#secrets" class="table-of-contents__link">Secrets</a></li><li><a href="#gated-build" class="table-of-contents__link">Gated build</a></li><li><a href="#ci-build-continuous-integration" class="table-of-contents__link">CI build (continuous integration)</a></li><li><a href="#cd-build-continuous-deployment" class="table-of-contents__link">CD build (continuous deployment)</a></li></ul></div></div></div></div></main></div></div></div>
-<script src="/styles.bb8a1bc8.js"></script>
-<script src="/runtime~main.2e9d449f.js"></script>
-<script src="/main.82125445.js"></script>
-<script src="/1.06c1dc71.js"></script>
-<script src="/2.410b8886.js"></script>
-<script src="/28.9e58abbe.js"></script>
-<script src="/31.7d631685.js"></script>
-<script src="/935f2afb.52ade4c4.js"></script>
-<script src="/17896441.006d9f1b.js"></script>
-<script src="/3c2eea91.939d266e.js"></script>
+<script src="/styles.b16485ef.js"></script>
+<script src="/runtime~main.9bef9bf5.js"></script>
+<script src="/main.e5968379.js"></script>
+<script src="/1.ecc7d386.js"></script>
+<script src="/2.28382b0d.js"></script>
+<script src="/28.dc8b4546.js"></script>
+<script src="/31.f4b64286.js"></script>
+<script src="/935f2afb.fc4a7e70.js"></script>
+<script src="/17896441.b96f0030.js"></script>
+<script src="/3c2eea91.456cc11b.js"></script>
 </body>
 </html>
