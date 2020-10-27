@@ -30,7 +30,7 @@ module.exports = {
           label: "Products",
           position: "left",
         },
-        { to: "supported-tech", label: "Supported Tech", position: "left" },
+        { to: "techradar", label: "Supported Tech", position: "left" },
         {
           href: "https://medium.com/glasswall-engineering",
           label: "Medium",
