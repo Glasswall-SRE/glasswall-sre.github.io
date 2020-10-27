@@ -1,0 +1,22 @@
+name: Gated Pipeline
+
+on:
+  pull_request:
+    branches:
+      - source
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: Installation ⏳
+        run: yarn
+      - name: Build 🧱
+        run: yarn build
+      - name: Testing 💉
+        uses: cypress-io/github-action@v1
+        with:
+          start: yarn start
+          wait-on: "http://localhost:3000"

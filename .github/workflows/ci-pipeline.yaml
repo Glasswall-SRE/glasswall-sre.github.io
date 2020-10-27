@@ -1,14 +1,10 @@
-name: ci
+name: CI Pipeline
 
 on:
-  # Trigger analysis when pushing in master or pull requests, and when creating
-  # a pull request.
   push:
     branches:
       - source
-  pull_request:
-    branches:
-      - source
+
 jobs:
   build:
     runs-on: ubuntu-latest
