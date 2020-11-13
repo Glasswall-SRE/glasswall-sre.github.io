@@ -10,7 +10,8 @@ module.exports = {
       label: "Production",
       items: [
         "production/journey-to-production",
-        "production/production-readiness-review"
+        "production/production-readiness-review",
+        "production/production-release-process"
       ]
     },
     {
