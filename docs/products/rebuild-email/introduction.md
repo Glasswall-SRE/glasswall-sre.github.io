@@ -9,7 +9,7 @@ Powered by d-FIRST™, Glasswall’s email protection service delivers attachmen
 
 ## Contents
 
-1. [Data Management](data-management)
+1. [Data Management](security-policy/data-management)
 2. [Service Level Objectives](slos)
 3. [Releases](releases)
 
