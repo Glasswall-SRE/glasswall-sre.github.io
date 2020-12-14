@@ -51,5 +51,5 @@ Error budgets are the tool SRE uses to balance service reliability with the pace
 
 A P1 is the highest priority of bug: all hands on deck; drop everything else until this is fixed.
 
-[Our current SLI and SLOs](slo-slis)
+[Our current SLI and SLOs](/docs/sre/slo-slis)
 
